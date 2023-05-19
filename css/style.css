@@ -15,30 +15,19 @@ h1 {
   margin-bottom: 50px;
 }
 
-
-#img-container {
+section {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
 }
 
-
-ul {
-  color: #fff;
-  width: max-content;
-  margin: auto;
-}
-
-li {
-  line-height: 30px;
-}
-
-
-img {
-  height: 400px;
-  width: 400px;
+section img {
+  flex: 1;
+  max-width: 400px;
+  height: auto;
+  max-height: 400px;
+  width: auto;
   border-style: solid;
-  border-width: 4px;
+  border-width: 7px;
   border-image: linear-gradient(
     hsl(224, 85%, 66%),
     hsl(269, 85%, 66%),
@@ -49,12 +38,23 @@ img {
     hsl(134, 85%, 66%),
     hsl(179, 85%, 66%)
   ) 1;
-
+  margin: 10px;
 }
 
-#show-results-btn {
-  width: max-content;
+ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: inline-flex;
+  align-items: center;
+  line-height: 30px;
   font-family: 'Exo 2', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
@@ -62,13 +62,16 @@ img {
   background-color: #111;
   position: relative;
   z-index: 0;
-  margin: 30px auto 30px;
+  margin: 30px 10px;
   height: 30px;
-
+  text-decoration: none;
 }
 
+li:hover {
+  text-decoration: none;
+}
 
-#show-results-btn:before {
+li:before {
   content: '';
   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
   position: absolute;
@@ -85,20 +88,19 @@ img {
   border-radius: 10px;
 }
 
-#show-results-btn:active {
-  color: #000
+li:active {
+  color: #000;
 }
 
-
-#show-results-btn:active:after {
+li:active:after {
   background: transparent;
 }
 
-#show-results-btn:hover:before {
+li:hover:before {
   opacity: 1;
 }
 
-#show-results-btn:after {
+li:after {
   z-index: -1;
   content: '';
   position: absolute;
@@ -107,23 +109,17 @@ img {
   background: #111;
   left: 0;
   top: 0;
-
   border-radius: 10px;
 }
 
 @keyframes glowing {
-  0% {
-    background-position: 0 0;
-  }
-
-  50% {
-    background-position: 400% 0;
-  }
-
-  100% {
-    background-position: 0 0;
-  }
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
 }
+
+
+
 
 footer {
   height: 100px;
@@ -131,4 +127,21 @@ footer {
   text-align: right;
   margin-right: 20px;
   color: #7e57c2
+}
+
+canvas {
+  height: 400px;
+  width: 400px;
+  border-style: solid;
+  border-width: 4px;
+  border-image: linear-gradient(
+    hsl(224, 85%, 66%),
+    hsl(269, 85%, 66%),
+    hsl(314, 85%, 66%),
+    hsl(359, 85%, 66%),
+    hsl(44, 85%, 66%),
+    hsl(89, 85%, 66%),
+    hsl(134, 85%, 66%),
+    hsl(179, 85%, 66%)
+  ) 1;
 }
